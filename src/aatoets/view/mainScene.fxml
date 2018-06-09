@@ -1,0 +1,18 @@
+<?import javafx.scene.control.*?>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <Tab text="Start">
+        <fx:include source="startScene.fxml" />
+    </Tab>
+    <Tab text="Opties">
+        <fx:include source="optieScene.fxml" />
+    </Tab>
+    <Tab text="Toets">
+        <fx:include source="toetsScene.fxml" />
+    </Tab>
+    <Tab text="Speel">
+        <fx:include source="speelScene.fxml" />
+    </Tab>
+    <Tab text="Resultaat">
+        <fx:include source="resultaatScene.fxml" />
+    </Tab>
+</TabPane>
