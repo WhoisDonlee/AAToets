@@ -1,4 +1,4 @@
-package aatoets;
+package aatoets.data;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -11,12 +11,12 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-class XMLreader {
+public class XMLreader {
 
 
     private Document doc;
 
-    XMLreader(String filePath) {
+    public XMLreader(String filePath) {
 
         try {
             File xmlFile = new File(filePath);
@@ -28,7 +28,7 @@ class XMLreader {
         }
     }
 
-    List<String[]> getByTag() {
+    public List<String[]> getByTag() {
         List<String[]> tagList = new ArrayList<>();
         NodeList nList = this.doc.getElementsByTagName("aminozuur");
         for (int i = 0; i < nList.getLength(); i++){
