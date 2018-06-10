@@ -1,13 +1,11 @@
 package aatoets;
 
-import aatoets.data.XMLreader;
+import aatoets.data.AminozurenHandler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.util.List;
 
 public class Main extends Application {
 
@@ -18,15 +16,8 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
 
-        List<String[]> aminoList;
-        XMLreader xmlReader = new XMLreader("src/aatoets/data/amino.xml");
-        aminoList = xmlReader.getByTag();
-
-        for (String[] anAminoList : aminoList) {
-            for (String anAnAminoList : anAminoList) {
-                System.out.println(anAnAminoList);
-            }
-        }
+        AminozurenHandler aminoModel = new AminozurenHandler();
+        aminoModel.initAminozuren();
     }
 
 
