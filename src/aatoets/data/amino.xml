@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<aminozuren>
+    <aminozuur id="glycine">
+        <code-1>G</code-1>
+        <code-3>Gly</code-3>
+        <hydrofobiciteit>Moderate</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Klein</grootte>
+        <structuur3d>T</structuur3d>
+    </aminozuur>
+    <aminozuur id="alanine">
+        <code-1>A</code-1>
+        <code-3>Ala</code-3>
+        <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Klein</grootte>
+        <structuur3d>H</structuur3d>
+    </aminozuur>
+    <aminozuur id="valine">
+        <code-1>V</code-1>
+        <code-3>Val</code-3>
+        <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Klein</grootte>
+        <structuur3d>S</structuur3d>
+    </aminozuur>
+    <aminozuur id="leucine">
+        <code-1>L</code-1>
+        <code-3>Leu</code-3>
+        <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Middel</grootte>
+        <structuur3d>H</structuur3d>
+    </aminozuur>
+    <aminozuur id="isoleucine">
+        <code-1>I</code-1>
+        <code-3>Ile</code-3>
+        <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Middel</grootte>
+        <structuur3d>S</structuur3d>
+    </aminozuur>
+    <aminozuur id="methionine">
+        <code-1>M</code-1>
+        <code-3>Met</code-3>
+        <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Groot</grootte>
+        <structuur3d>H</structuur3d>
+    </aminozuur>
+    <aminozuur id="proline">
+        <code-1>P</code-1>
+        <code-3>Pro</code-3>
+        <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Klein</grootte>
+        <structuur3d>T</structuur3d>
+    </aminozuur>
+    <aminozuur id="phenylalanine">
+        <code-1>F</code-1>
+        <code-3>Phe</code-3>
+        <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Groot</grootte>
+        <structuur3d>S</structuur3d>
+    </aminozuur>
+    <aminozuur id="tyrosine">
+        <code-1>Y</code-1>
+        <code-3>Tyr</code-3>
+        <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Groot</grootte>
+        <structuur3d>S</structuur3d>
+    </aminozuur>
+    <aminozuur id="tryptophan">
+        <code-1>W</code-1>
+        <code-3>Trp</code-3>
+        <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Groot</grootte>
+        <structuur3d>S</structuur3d>
+    </aminozuur>
+    <aminozuur id="serine">
+        <code-1>S</code-1>
+        <code-3>Ser</code-3>
+        <hydrofobiciteit>Moderate</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Klein</grootte>
+        <structuur3d>T</structuur3d>
+    </aminozuur>
+    <aminozuur id="threonine">
+        <code-1>T</code-1>
+        <code-3>Thr</code-3>
+        <hydrofobiciteit>Moderate</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Klein</grootte>
+        <structuur3d>S</structuur3d>
+    </aminozuur>
+    <aminozuur id="cysteine">
+        <code-1>C</code-1>
+        <code-3>Cys</code-3>
+        <hydrofobiciteit>Moderate</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Middel</grootte>
+        <structuur3d>S</structuur3d>
+    </aminozuur>
+    <aminozuur id="asparagine">
+        <code-1>N</code-1>
+        <code-3>Asn</code-3>
+        <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Middel</grootte>
+        <structuur3d>T</structuur3d>
+    </aminozuur>
+    <aminozuur id="glutamine">
+        <code-1>Q</code-1>
+        <code-3>Gln</code-3>
+        <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
+        <lading>0</lading>
+        <grootte>Groot</grootte>
+        <structuur3d>Geen</structuur3d>
+    </aminozuur>
+    <aminozuur id="lysine">
+        <code-1>K</code-1>
+        <code-3>Lys</code-3>
+        <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
+        <lading>+</lading>
+        <grootte>Groot</grootte>
+        <structuur3d>H</structuur3d>
+    </aminozuur>
+    <aminozuur id="arginine">
+        <code-1>R</code-1>
+        <code-3>Arg</code-3>
+        <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
+        <lading>+</lading>
+        <grootte>Groot</grootte>
+        <structuur3d>Geen</structuur3d>
+    </aminozuur>
+    <aminozuur id="histidine">
+        <code-1>H</code-1>
+        <code-3>His</code-3>
+        <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
+        <lading>+</lading>
+        <grootte>Groot</grootte>
+        <structuur3d>Geen</structuur3d>
+    </aminozuur>
+    <aminozuur id="aspartic-acid">
+        <code-1>D</code-1>
+        <code-3>Asp</code-3>
+        <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
+        <lading>-</lading>
+        <grootte>Middel</grootte>
+        <structuur3d>H</structuur3d>
+    </aminozuur>
+    <aminozuur id="glutamic-acid">
+        <code-1>E</code-1>
+        <code-3>Glu</code-3>
+        <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
+        <lading>-</lading>
+        <grootte>Groot</grootte>
+        <structuur3d>H</structuur3d>
+    </aminozuur>
+</aminozuren>

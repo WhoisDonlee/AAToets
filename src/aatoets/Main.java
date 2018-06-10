@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class Main extends Application {
 
     @Override
@@ -14,10 +16,21 @@ public class Main extends Application {
         primaryStage.setTitle("AA Toets");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+
+        List<String[]> aminoList;
+        XMLreader xmlReader = new XMLreader("src/aatoets/data/amino.xml");
+        aminoList = xmlReader.getByTag();
+
+        for (String[] anAminoList : aminoList) {
+            for (String anAnAminoList : anAminoList) {
+                System.out.println(anAnAminoList);
+            }
+        }
     }
 
 
     public static void main(String[] args) {
         launch(args);
     }
+
 }
