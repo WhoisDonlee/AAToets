@@ -20,4 +20,13 @@ public class AminozurenHandler {
             this.aminoObjectList.add(new Aminozuur(aa[0], aa[1], aa[2], aa[3], aa[4], aa[5], aa[6]));
         }
     }
+
+    public Aminozuur getAminozuurByName(String naam) {
+        for (Aminozuur aa : this.aminoObjectList) {
+            if (aa.getNaam().equals(naam)) {
+                return aa;
+            }
+        }
+        return null;
+    }
 }

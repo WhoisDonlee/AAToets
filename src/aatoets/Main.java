@@ -1,6 +1,7 @@
 package aatoets;
 
 import aatoets.data.AminozurenHandler;
+import aatoets.data.Aminozuur;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
