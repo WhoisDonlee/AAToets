@@ -11,13 +11,16 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class XMLreader {
+class XMLreader {
 
 
     private Document doc;
 
-    public XMLreader(String filePath) {
-
+    /*
+    * Leest een xml bestand in.
+    * Slaat de content op als Doc type
+    * */
+    XMLreader(String filePath) {
         try {
             File xmlFile = new File(filePath);
             DocumentBuilderFactory dbfactory = DocumentBuilderFactory.newInstance();
@@ -28,7 +31,10 @@ public class XMLreader {
         }
     }
 
-    public List<String[]> getByTag() {
+    /*
+    * Geeft een 2D lijst van data pet tag.
+    * */
+    List<String[]> getByTag() {
         List<String[]> tagList = new ArrayList<>();
         NodeList nList = this.doc.getElementsByTagName("aminozuur");
         for (int i = 0; i < nList.getLength(); i++){

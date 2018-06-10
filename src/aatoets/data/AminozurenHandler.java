@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AminozurenHandler {
+    /*
+    * Hanteert de aminozuur objecten.
+    * */
 
     private final ArrayList<Aminozuur> aminoObjectList;
 
@@ -11,6 +14,10 @@ public class AminozurenHandler {
         this.aminoObjectList = new ArrayList<>();
     }
 
+    /*
+    * Haalt de data van aminozuren uit de XML file.
+    * Deze data wordt omgezet in een Aminozuur object en toegevoegd in een ArrayList<Aminozuur>
+    * */
     public void initAminozuren() {
         List<String[]> aminoList;
         XMLreader xmlReader = new XMLreader("src/aatoets/data/amino.xml");
@@ -21,6 +28,11 @@ public class AminozurenHandler {
         }
     }
 
+    /*
+    * Geeft het Aminozuur object dmv de naam mee te geven als parameter
+    *
+    * e.g. getAminozuurByName("histidine")
+    * */
     public Aminozuur getAminozuurByName(String naam) {
         for (Aminozuur aa : this.aminoObjectList) {
             if (aa.getNaam().equals(naam)) {
