@@ -34,7 +34,7 @@
         <ButtonBar prefHeight="173.0" prefWidth="491.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
             <buttons>
                 <Button mnemonicParsing="false" onAction="#loadBeginScene" prefHeight="70.0" text="Begin" />
-                <Button disable="true" mnemonicParsing="false" onAction="#loadSpeelScene" prefHeight="70.0" prefWidth="314.0" text="Speel" />
+                <Button fx:id="speelButton" disable="true" mnemonicParsing="false" onAction="#loadSpeelScene" prefHeight="70.0" prefWidth="314.0" text="Speel" />
                 <Button minWidth="0.0" mnemonicParsing="false" onAction="#afsluiten" prefHeight="70.0" text="Afsluiten" />
             </buttons>
         </ButtonBar>
