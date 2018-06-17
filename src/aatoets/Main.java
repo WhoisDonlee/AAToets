@@ -16,8 +16,9 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
 
-        AminozurenHandler aminoModel = new AminozurenHandler();
-        aminoModel.initAminozuren();
+        AminozurenHandler.initAminozuren();
+        AminozurenHandler.getAminozuurByName("glycine");
+        System.out.println(AminozurenHandler.getAminozuurByName("glycine").getHydrofobiciteit());
     }
 
 
