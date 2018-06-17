@@ -42,12 +42,12 @@
         <VBox prefHeight="164.0" prefWidth="373.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <RadioButton mnemonicParsing="false" text="30">
                 <toggleGroup>
-                    <ToggleGroup fx:id="aantal" />
+                    <ToggleGroup fx:id="aantalVragen"/>
                 </toggleGroup></RadioButton>
-            <RadioButton mnemonicParsing="false" text="40" toggleGroup="$aantal" />
-            <RadioButton mnemonicParsing="false" selected="true" text="50" toggleGroup="$aantal" />
-            <RadioButton mnemonicParsing="false" text="60" toggleGroup="$aantal" />
-            <RadioButton mnemonicParsing="false" text="70" toggleGroup="$aantal" />
+            <RadioButton mnemonicParsing="false" text="40" toggleGroup="$aantalVragen" />
+            <RadioButton mnemonicParsing="false" selected="true" text="50" toggleGroup="$aantalVragen" />
+            <RadioButton mnemonicParsing="false" text="60" toggleGroup="$aantalVragen" />
+            <RadioButton mnemonicParsing="false" text="70" toggleGroup="$aantalVragen" />
         </VBox>
         <Label text="Aantal vragen" GridPane.rowIndex="1" />
 

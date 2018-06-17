@@ -24,6 +24,8 @@ public class optieController extends Controller implements Initializable {
     @FXML
     Button speelButton;
     @FXML
+    ToggleGroup aantalVragen;
+    @FXML
     ToggleGroup aantalSeconden;
     @FXML
     TextField naamTextField;
@@ -84,11 +86,16 @@ public class optieController extends Controller implements Initializable {
 
     private void slaOptiesOp() {
         OptieClass.setNaam(naamTextField.getText());
-
+        OptieClass.setAantalVragen(getAantalVragen());
         OptieClass.setSoortVragen(soortVragenLijst);
         OptieClass.setSoortAntwoorden(soortAntwoordenLijst);
         OptieClass.setTijd(tijdCheckBox.isSelected());
         OptieClass.setAantalSeconden(getAantalSeconden());
+    }
+
+    private int getAantalVragen() {
+        RadioButton rb = (RadioButton)aantalVragen.getSelectedToggle();
+        return Integer.parseInt(rb.getText());
     }
 
     private int getAantalSeconden() {
@@ -106,7 +113,7 @@ public class optieController extends Controller implements Initializable {
 
     public void loadSpeelScene(ActionEvent actionEvent) throws IOException {
         slaOptiesOp();
-//        screenManager.loadStage(rootPane, "/aatoets/view/speelScene.fxml");
+        screenManager.loadStage(rootPane, "/aatoets/view/speelScene.fxml");
     }
 
     public void loadBeginScene(ActionEvent actionEvent) throws IOException {
