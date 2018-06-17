@@ -1,6 +1,8 @@
 package aatoets.controller;
 
 import aatoets.data.OptieClass;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,7 +12,6 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class optieController extends Controller implements Initializable {
@@ -25,12 +26,17 @@ public class optieController extends Controller implements Initializable {
     @FXML
     Button speelButton;
     @FXML
+    ToggleGroup aantalSeconden;
+    @FXML
     TextField naamTextField;
+    @FXML
+    CheckBox tijdCheckBox;
     @FXML
     GridPane checkBoxGrid;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        tijdCheckBoxListener();
         naamTextFieldChangeListener();
         createCheckboxes(0);
         createCheckboxes(1);
@@ -69,10 +75,31 @@ public class optieController extends Controller implements Initializable {
         }
     }
 
+    private void enableTijdbuttons() {
+        Boolean disable = !tijdCheckBox.isSelected();
+        for (Toggle t : aantalSeconden.getToggles()) {
+            if (t instanceof RadioButton) {
+                ((RadioButton) t).setDisable(disable);
+            }
+        }
+    }
+
     private void slaOptiesOp() {
         OptieClass.setNaam(naamTextField.getText());
+
         OptieClass.setSoortVragen(soortVragenLijst);
         OptieClass.setSoortAntwoorden(soortAntwoordenLijst);
+        OptieClass.setTijd(tijdCheckBox.isSelected());
+        OptieClass.setAantalSeconden(getAantalSeconden());
+    }
+
+    private int getAantalSeconden() {
+        RadioButton rb = (RadioButton)aantalSeconden.getSelectedToggle();
+        return Integer.parseInt(rb.getText());
+    }
+
+    private void tijdCheckBoxListener (){
+        tijdCheckBox.selectedProperty().addListener((observableValue, aBoolean, t1) -> enableTijdbuttons());
     }
 
     private void naamTextFieldChangeListener() {

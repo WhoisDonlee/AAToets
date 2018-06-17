@@ -83,7 +83,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
-            <CheckBox mnemonicParsing="false" text="Ja" GridPane.rowIndex="2" />
+            <CheckBox fx:id="tijdCheckBox" mnemonicParsing="false" text="Ja" GridPane.rowIndex="2" />
             <RadioButton disable="true" mnemonicParsing="false" selected="true" text="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
                 <toggleGroup>
                     <ToggleGroup fx:id="aantalSeconden" />
