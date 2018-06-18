@@ -2,6 +2,7 @@ package aatoets.data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class AminozurenHandler {
     /*
@@ -43,5 +44,9 @@ public class AminozurenHandler {
             }
         }
         return null;
+    }
+
+    public static Aminozuur getRandomAminozuur() {
+        return aminoObjectList.get(new Random().nextInt(aminoObjectList.size()));
     }
 }
