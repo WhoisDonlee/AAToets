@@ -46,6 +46,44 @@ public class AminozurenHandler {
         return null;
     }
 
+    public static Aminozuur getAminozuurByAttribute(String att, String val, boolean niet) {
+        Aminozuur aa = null;
+        String attWaarde = val;
+
+        if(niet) {
+            while(!attWaarde.equals(val)) {
+                aa = getRandomAminozuur();
+                switch (att) {
+                    case "hydro":
+                        attWaarde = aa.getHydrofobiciteit();
+                        break;
+                    case "lading":
+                        attWaarde = aa.getLading();
+                        break;
+                    case "grootte":
+                        attWaarde = aa.getGrootte();
+                        break;
+                }
+            }
+        } else {
+            while(attWaarde.equals(val)) {
+                aa = getRandomAminozuur();
+                switch (att) {
+                    case "hydro":
+                        attWaarde = aa.getHydrofobiciteit();
+                        break;
+                    case "lading":
+                        attWaarde = aa.getLading();
+                        break;
+                    case "grootte":
+                        attWaarde = aa.getGrootte();
+                        break;
+                }
+            }
+        }
+        return aa;
+    }
+
     public static Aminozuur getRandomAminozuur() {
         return aminoObjectList.get(new Random().nextInt(aminoObjectList.size()));
     }

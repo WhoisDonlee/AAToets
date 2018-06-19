@@ -4,7 +4,7 @@
         <code-1>G</code-1>
         <code-3>Gly</code-3>
         <hydrofobiciteit>Moderate</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Klein</grootte>
         <structuur3d>T</structuur3d>
     </aminozuur>
@@ -12,7 +12,7 @@
         <code-1>A</code-1>
         <code-3>Ala</code-3>
         <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Klein</grootte>
         <structuur3d>H</structuur3d>
     </aminozuur>
@@ -20,7 +20,7 @@
         <code-1>V</code-1>
         <code-3>Val</code-3>
         <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Klein</grootte>
         <structuur3d>S</structuur3d>
     </aminozuur>
@@ -28,7 +28,7 @@
         <code-1>L</code-1>
         <code-3>Leu</code-3>
         <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Middel</grootte>
         <structuur3d>H</structuur3d>
     </aminozuur>
@@ -36,7 +36,7 @@
         <code-1>I</code-1>
         <code-3>Ile</code-3>
         <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Middel</grootte>
         <structuur3d>S</structuur3d>
     </aminozuur>
@@ -44,7 +44,7 @@
         <code-1>M</code-1>
         <code-3>Met</code-3>
         <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Groot</grootte>
         <structuur3d>H</structuur3d>
     </aminozuur>
@@ -52,7 +52,7 @@
         <code-1>P</code-1>
         <code-3>Pro</code-3>
         <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Klein</grootte>
         <structuur3d>T</structuur3d>
     </aminozuur>
@@ -60,7 +60,7 @@
         <code-1>F</code-1>
         <code-3>Phe</code-3>
         <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Groot</grootte>
         <structuur3d>S</structuur3d>
     </aminozuur>
@@ -68,7 +68,7 @@
         <code-1>Y</code-1>
         <code-3>Tyr</code-3>
         <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Groot</grootte>
         <structuur3d>S</structuur3d>
     </aminozuur>
@@ -76,7 +76,7 @@
         <code-1>W</code-1>
         <code-3>Trp</code-3>
         <hydrofobiciteit>Hydrofoob</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Groot</grootte>
         <structuur3d>S</structuur3d>
     </aminozuur>
@@ -84,7 +84,7 @@
         <code-1>S</code-1>
         <code-3>Ser</code-3>
         <hydrofobiciteit>Moderate</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Klein</grootte>
         <structuur3d>T</structuur3d>
     </aminozuur>
@@ -92,7 +92,7 @@
         <code-1>T</code-1>
         <code-3>Thr</code-3>
         <hydrofobiciteit>Moderate</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Klein</grootte>
         <structuur3d>S</structuur3d>
     </aminozuur>
@@ -100,7 +100,7 @@
         <code-1>C</code-1>
         <code-3>Cys</code-3>
         <hydrofobiciteit>Moderate</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Middel</grootte>
         <structuur3d>S</structuur3d>
     </aminozuur>
@@ -108,7 +108,7 @@
         <code-1>N</code-1>
         <code-3>Asn</code-3>
         <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Middel</grootte>
         <structuur3d>T</structuur3d>
     </aminozuur>
@@ -116,7 +116,7 @@
         <code-1>Q</code-1>
         <code-3>Gln</code-3>
         <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
-        <lading>0</lading>
+        <lading>neutraal</lading>
         <grootte>Groot</grootte>
         <structuur3d>Geen</structuur3d>
     </aminozuur>
@@ -124,7 +124,7 @@
         <code-1>K</code-1>
         <code-3>Lys</code-3>
         <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
-        <lading>+</lading>
+        <lading>positief</lading>
         <grootte>Groot</grootte>
         <structuur3d>H</structuur3d>
     </aminozuur>
@@ -132,7 +132,7 @@
         <code-1>R</code-1>
         <code-3>Arg</code-3>
         <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
-        <lading>+</lading>
+        <lading>positief</lading>
         <grootte>Groot</grootte>
         <structuur3d>Geen</structuur3d>
     </aminozuur>
@@ -140,7 +140,7 @@
         <code-1>H</code-1>
         <code-3>His</code-3>
         <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
-        <lading>+</lading>
+        <lading>positief</lading>
         <grootte>Groot</grootte>
         <structuur3d>Geen</structuur3d>
     </aminozuur>
@@ -148,7 +148,7 @@
         <code-1>D</code-1>
         <code-3>Asp</code-3>
         <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
-        <lading>-</lading>
+        <lading>negatief</lading>
         <grootte>Middel</grootte>
         <structuur3d>H</structuur3d>
     </aminozuur>
@@ -156,7 +156,7 @@
         <code-1>E</code-1>
         <code-3>Glu</code-3>
         <hydrofobiciteit>Hydrofiel</hydrofobiciteit>
-        <lading>-</lading>
+        <lading>negatief</lading>
         <grootte>Groot</grootte>
         <structuur3d>H</structuur3d>
     </aminozuur>

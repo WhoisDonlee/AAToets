@@ -32,24 +32,24 @@ public class Vragen {
             "Wat is de zijketen van aminozuur %s?"
     ));
     private static ArrayList<String> hydrofobiciteitVragen = new ArrayList<>(Arrays.asList(
-            "Welk aminozuur is <hydrofiel/neutraal/hydrofoob> ?",
-            "Welk aminozuur is niet <hydrofiel/neutraal/hydrofoob> ?",
+            "Welk aminozuur is %s?",
+            "Welk aminozuur is niet %s?",
             "Wat is de hydrofobiciteit van aminozuur %s?",
             "Wat is de hydrofobiciteit van aminozuur %s?",
             "Wat is de hydrofobiciteit van aminozuur %s?",
             "Wat is de hydrofobiciteit van aminozuur met de volgende zijketen:"
     ));
     private static ArrayList<String> ladingVragen = new ArrayList<>(Arrays.asList(
-            "Welk aminozuur is <positief/negatief/neutraal> geladen?",
-            "Welk aminozuur is niet <positief/negatief/neutraal> geladen?",
+            "Welk aminozuur is %s?",
+            "Welk aminozuur is niet %s?",
             "Wat is de lading van aminozuur %s?",
             "Wat is de lading van aminozuur %s?",
             "Wat is de lading van aminozuur %s?",
             "Wat is de lading van aminozuur met de volgende zijketen:"
     ));
     private static ArrayList<String> grootteVragen = new ArrayList<>(Arrays.asList(
-            "Welk aminozuur is <groot/middel/klein>?",
-            "Welk aminozuur is niet <groot/middel/klein>?",
+            "Welk aminozuur is %s?",
+            "Welk aminozuur is niet %s?",
             "Wat is de grootte van aminozuur %s?",
             "Wat is de grootte van aminozuur %s?",
             "Wat is de grootte van aminozuur %s?",
@@ -75,12 +75,8 @@ public class Vragen {
     private static ArrayList<String> volledigeNaamAlsAntwoord = new ArrayList<>(Arrays.asList(
             "Wat is de volledigenaam van aminozuur %s?",
             "Wat is de volledigenaam van aminozuur %s?",
-            "Welk aminozuur is <hydrofiel/neutraal/hydrofoob> ?",
-            "Welk aminozuur is niet <hydrofiel/neutraal/hydrofoob> ?",
-            "Welk aminozuur is <positief/negatief/neutraal> geladen?",
-            "Welk aminozuur is niet <positief/negatief/neutraal> geladen?",
-            "Welk aminozuur is <groot/middel/klein>?",
-            "Welk aminozuur is niet <groot/middel/klein>?",
+            "Welk aminozuur is %s?",
+            "Welk aminozuur is niet %s?",
             "Welk aminozuur heeft een voorkeur voor <helix/turn/sheet>?",
             "Welk aminozuur heeft geen voorkeur voor een <helix/turn/sheet>?",
             "Wat is de volledigenaam van het volgende aminozuur met zijketen:"
@@ -89,12 +85,8 @@ public class Vragen {
     private static ArrayList<String> code1AlsAntwoord = new ArrayList<>(Arrays.asList(
             "Wat is de 1-lettercode van %s?",
             "Wat is de 1-lettercode van aminozuur %s?",
-            "Welk aminozuur is <hydrofiel/neutraal/hydrofoob> ?",
-            "Welk aminozuur is niet <hydrofiel/neutraal/hydrofoob> ?",
-            "Welk aminozuur is <positief/negatief/neutraal> geladen?",
-            "Welk aminozuur is niet <positief/negatief/neutraal> geladen?",
-            "Welk aminozuur is <groot/middel/klein>?",
-            "Welk aminozuur is niet <groot/middel/klein>?",
+            "Welk aminozuur is %s?",
+            "Welk aminozuur is niet %s?",
             "Welk aminozuur heeft een voorkeur voor <helix/turn/sheet>?",
             "Welk aminozuur heeft geen voorkeur voor een <helix/turn/sheet>?",
             "Wat is de 1-lettercode van het volgende aminozuur met zijketen:"
@@ -103,12 +95,8 @@ public class Vragen {
     private static ArrayList<String> code3AlsAntwoord = new ArrayList<>(Arrays.asList(
             "Wat is de 3-lettercode van %s?",
             "Wat is de 3-lettercode van aminozuur %s?",
-            "Welk aminozuur is <hydrofiel/neutraal/hydrofoob> ?",
-            "Welk aminozuur is niet <hydrofiel/neutraal/hydrofoob>" ,
-            "Welk aminozuur is <positief/negatief/neutraal> geladen?",
-            "Welk aminozuur is niet <positief/negatief/neutraal> geladen?",
-            "Welk aminozuur is <groot/middel/klein>?",
-            "Welk aminozuur is niet <groot/middel/klein>?",
+            "Welk aminozuur is %s?",
+            "Welk aminozuur is niet %s?",
             "Welk aminozuur heeft een voorkeur voor <helix/turn/sheet>?",
             "Welk aminozuur heeft geen voorkeur voor een <helix/turn/sheet>?",
             "Wat is de 3-lettercode van het volgende aminozuur met zijketen:"

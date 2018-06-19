@@ -17,6 +17,7 @@ public class Main extends Application {
         primaryStage.show();
 
         AminozurenHandler.initAminozuren();
+        AminozurenHandler.getAminozuurByAttribute("lading", "positief", false);
     }
 
 
