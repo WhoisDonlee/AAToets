@@ -20,9 +20,10 @@ public class speelController extends Controller implements Initializable {
     }
 
     public void genereerVraag(ActionEvent actionEvent) {
-        String[] s = tc.genereerVraag();
-        for (String w : s) {
-            System.out.println(w);
-        }
+//        String[] s = tc.genereerVraag();
+//        tc.genVraag();
+//        for (String w : s) {
+//            System.out.println(w);
+//        }
     }
 }
