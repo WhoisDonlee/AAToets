@@ -42,7 +42,7 @@
         <VBox prefHeight="164.0" prefWidth="373.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <RadioButton mnemonicParsing="false" text="30">
                 <toggleGroup>
-                    <ToggleGroup fx:id="aantalVragen"/>
+                    <ToggleGroup fx:id="aantalVragen" />
                 </toggleGroup></RadioButton>
             <RadioButton mnemonicParsing="false" text="40" toggleGroup="$aantalVragen" />
             <RadioButton mnemonicParsing="false" selected="true" text="50" toggleGroup="$aantalVragen" />
@@ -95,6 +95,7 @@
             <Label text="Aantal seconden" GridPane.columnIndex="1" />
         </GridPane>
         <Label text="Soort vragen" GridPane.rowIndex="2" />
+      <Label fx:id="errorLabel" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="3" />
     </GridPane>
     <columnConstraints>
         <ColumnConstraints />

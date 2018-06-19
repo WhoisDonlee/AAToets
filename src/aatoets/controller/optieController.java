@@ -8,12 +8,16 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class optieController extends Controller implements Initializable {
 
+    public Label errorLabel;
     private String[] checkBoxList = {"Volledige Naam", "1 lettercode",
                              "3 lettercode", "Hydrofobiciteit",
                              "Lading", "Grootte",
@@ -93,6 +97,19 @@ public class optieController extends Controller implements Initializable {
         OptieClass.setAantalSeconden(getAantalSeconden());
     }
 
+    private boolean checkCheckbox() {
+        ArrayList<String> idList = new ArrayList<>(Arrays.asList(
+                "Volledige Naam", "1 lettercode", "3 lettercode", "Structuur"
+        ));
+        if((Collections.disjoint(idList, soortVragenLijst) && (Collections.disjoint(idList, soortAntwoordenLijst)))) {
+            errorLabel.setText(
+                    "In 1 van de lijsten moet \"Volledige Naam\",\"1 lettercode\",\n" +
+                            "\"3 lettercode\" of \"Structuur\" gekozen worden");
+            return false;
+        }
+        return true;
+    }
+
     private int getAantalVragen() {
         RadioButton rb = (RadioButton)aantalVragen.getSelectedToggle();
         return Integer.parseInt(rb.getText());
@@ -112,8 +129,10 @@ public class optieController extends Controller implements Initializable {
     }
 
     public void loadSpeelScene(ActionEvent actionEvent) throws IOException {
-        slaOptiesOp();
-        screenManager.loadStage(rootPane, "/aatoets/view/speelScene.fxml");
+        if (checkCheckbox()) {
+            slaOptiesOp();
+            screenManager.loadStage(rootPane, "/aatoets/view/speelScene.fxml");
+        }
     }
 
     public void loadBeginScene(ActionEvent actionEvent) throws IOException {
