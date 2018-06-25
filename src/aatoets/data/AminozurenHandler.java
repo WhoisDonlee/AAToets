@@ -46,7 +46,40 @@ public class AminozurenHandler {
         return null;
     }
 
-    public static Aminozuur getAminozuurByAttribute(String att, String val, boolean niet) {
+    static String getAminoAttribute(Aminozuur aminozuur, String soortAttribuut) {
+        String attribuut = null;
+        switch (soortAttribuut) {
+            case "Volledige Naam":
+                attribuut = aminozuur.getNaam();
+                break;
+            case "1 lettercode":
+                attribuut = aminozuur.getCode1();
+                break;
+            case "3 lettercode":
+                attribuut = aminozuur.getCode3();
+                break;
+            case "Hydrofobiciteit":
+                attribuut = aminozuur.getHydrofobiciteit();
+                break;
+            case "Lading":
+                attribuut = aminozuur.getLading();
+                break;
+            case "Grootte":
+                attribuut = aminozuur.getGrootte();
+                break;
+            case "3D Voorkeur":
+                attribuut = aminozuur.getVoorkeur3D();
+                break;
+            case "Structuur":
+                /*TODO
+                 * Plaatje uit XML laden*/
+                attribuut = "IMAGE.JPG";
+                break;
+        }
+        return attribuut;
+    }
+
+    public static Aminozuur getRandAminozuurByAttribute(String att, String val, boolean niet) {
         Aminozuur aa = null;
         String attWaarde = val;
 
@@ -84,7 +117,7 @@ public class AminozurenHandler {
         return aa;
     }
 
-    public static Aminozuur getRandomAminozuur() {
+    static Aminozuur getRandomAminozuur() {
         return aminoObjectList.get(new Random().nextInt(aminoObjectList.size()));
     }
 }

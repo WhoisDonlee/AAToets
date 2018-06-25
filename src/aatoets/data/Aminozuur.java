@@ -1,8 +1,6 @@
 package aatoets.data;
 
-import java.util.ArrayList;
-
-public class Aminozuur {
+class Aminozuur {
 
     private final String naam;
     private final String code1;
@@ -10,10 +8,10 @@ public class Aminozuur {
     private final String hydrofobiciteit;
     private final String lading;
     private final String grootte;
-    private final String structuur;
+    private final String voorkeur3D;
 
     Aminozuur(String naam, String code1, String code3,
-              String hydro, String lading, String grootte, String structuur) {
+              String hydro, String lading, String grootte, String  voorkeur3D) {
 
         this.naam = naam;
         this.code1 = code1;
@@ -21,34 +19,34 @@ public class Aminozuur {
         this.hydrofobiciteit = hydro;
         this.lading = lading;
         this.grootte = grootte;
-        this.structuur = structuur;
+        this.voorkeur3D = voorkeur3D;
     }
 
-    public String getNaam() {
+    String getNaam() {
         return this.naam;
     }
 
-    public String getCode1() {
+    String getCode1() {
         return this.code1;
     }
 
-    public String getCode3() {
+    String getCode3() {
         return this.code3;
     }
 
-    public String getHydrofobiciteit() {
+    String getHydrofobiciteit() {
         return this.hydrofobiciteit;
     }
 
-    public String getLading() {
+    String getLading() {
         return this.lading;
     }
 
-    public String getGrootte() {
+    String getGrootte() {
         return this.grootte;
     }
 
-    public String getStructuur() {
-        return this.structuur;
+    String getVoorkeur3D() {
+        return this.voorkeur3D;
     }
 }

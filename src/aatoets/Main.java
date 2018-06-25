@@ -11,13 +11,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("view/startScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/optieScene.fxml"));
         primaryStage.setTitle("AA Toets");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
 
         AminozurenHandler.initAminozuren();
-        AminozurenHandler.getAminozuurByAttribute("lading", "positief", false);
+        AminozurenHandler.getRandAminozuurByAttribute("lading", "positief", false);
     }
 
 
