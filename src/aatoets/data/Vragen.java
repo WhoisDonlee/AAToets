@@ -3,7 +3,7 @@ package aatoets.data;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Vragen {
+class Vragen {
     private static ArrayList<String> volledigeNaamVragen = new ArrayList<>(Arrays.asList(
             "Wat is de 1-lettercode van aminozuur %s?",
             "Wat is de 3-lettercode van aminozuur %s?",
@@ -74,7 +74,6 @@ public class Vragen {
 
     private static ArrayList<String> volledigeNaamAlsAntwoord = new ArrayList<>(Arrays.asList(
             "Wat is de volledigenaam van aminozuur %s?",
-            "Wat is de volledigenaam van aminozuur %s?",
             "Welk aminozuur is %s?",
             "Welk aminozuur is niet %s?",
             "Welk aminozuur heeft een voorkeur voor <helix/turn/sheet>?",
@@ -125,84 +124,84 @@ public class Vragen {
 
     private static ArrayList<String> voorkeur3DAlsAntwoord = new ArrayList<>(Arrays.asList(
             "Wat is de 3D voorkeur van aminozuur %s?",
-            "Wat is de 3D voorkeur van aminozuur %s",
+            "Wat is de 3D voorkeur van aminozuur %s?",
             "Wat is de 3D voorkeur van aminozuur %s?",
             "Wat is de 3D voorkeur van aminozuur met de volgende zijketen:"
     ));
 
     private static ArrayList<String> zijketenAlsAntwoord = new ArrayList<>(Arrays.asList(
-            "Wat is de zijketen van %s?",
+            "Wat is de zijketen van aminozuur %s?",
             "Wat is de zijketen van aminozuur %s?",
             "Wat is de zijketen van aminozuur %s?"
     ));
 
-    public static ArrayList<String> getVolledigeNaamVragen() {
+    private static ArrayList<String> getVolledigeNaamVragen() {
         return volledigeNaamVragen;
     }
 
-    public static ArrayList<String> getCode1Vragen() {
+    private static ArrayList<String> getCode1Vragen() {
         return code1Vragen;
     }
 
-    public static ArrayList<String> getCode3Vragen() {
+    private static ArrayList<String> getCode3Vragen() {
         return code3Vragen;
     }
 
-    public static ArrayList<String> getHydrofobiciteitVragen() {
+    private static ArrayList<String> getHydrofobiciteitVragen() {
         return hydrofobiciteitVragen;
     }
 
-    public static ArrayList<String> getLadingVragen() {
+    private static ArrayList<String> getLadingVragen() {
         return ladingVragen;
     }
 
-    public static ArrayList<String> getGrootteVragen() {
+    private static ArrayList<String> getGrootteVragen() {
         return grootteVragen;
     }
 
-    public static ArrayList<String> getVoorkeur3DVragen() {
+    private static ArrayList<String> getVoorkeur3DVragen() {
         return voorkeur3DVragen;
     }
 
-    public static ArrayList<String> getZijketenVragen() {
+    private static ArrayList<String> getZijketenVragen() {
         return zijketenVragen;
     }
 
-    public static ArrayList<String> getVolledigeNaamAlsAntwoord() {
+    private static ArrayList<String> getVolledigeNaamAlsAntwoord() {
         return volledigeNaamAlsAntwoord;
     }
 
-    public static ArrayList<String> getCode1AlsAntwoord() {
+    private static ArrayList<String> getCode1AlsAntwoord() {
         return code1AlsAntwoord;
     }
 
-    public static ArrayList<String> getCode3AlsAntwoord() {
+    private static ArrayList<String> getCode3AlsAntwoord() {
         return code3AlsAntwoord;
     }
 
-    public static ArrayList<String> getHydrofobiciteitAlsAntwoord() {
+    private static ArrayList<String> getHydrofobiciteitAlsAntwoord() {
         return hydrofobiciteitAlsAntwoord;
     }
 
-    public static ArrayList<String> getLadingAlsAntwoord() {
+    private static ArrayList<String> getLadingAlsAntwoord() {
         return ladingAlsAntwoord;
     }
 
-    public static ArrayList<String> getGrootteAlsAntwoord() {
+    private static ArrayList<String> getGrootteAlsAntwoord() {
         return grootteAlsAntwoord;
     }
 
-    public static ArrayList<String> getVoorkeur3DAlsAntwoord() {
+    private static ArrayList<String> getVoorkeur3DAlsAntwoord() {
         return voorkeur3DAlsAntwoord;
     }
 
-    public static ArrayList<String> getZijketenAlsAntwoord() {
+    private static ArrayList<String> getZijketenAlsAntwoord() {
         return zijketenAlsAntwoord;
     }
 
-    public static ArrayList<String> returnListByName(String lijstNaam, String type) {
+    static ArrayList<String> returnListByName(String lijstNaam, String type) {
         ArrayList<String> temp = new ArrayList<>();
-        if (type == "vraag") {
+        if (type.equals("vraag")) {
             switch (lijstNaam) {
                 case "Volledige Naam":
                     temp = Vragen.getVolledigeNaamVragen();
@@ -230,7 +229,7 @@ public class Vragen {
                     break;
             }
 
-        } else if (type == "alsAntwoord") {
+        } else if (type.equals("alsAntwoord")) {
             switch (lijstNaam) {
                 case "Volledige Naam":
                     temp = Vragen.getVolledigeNaamAlsAntwoord();
