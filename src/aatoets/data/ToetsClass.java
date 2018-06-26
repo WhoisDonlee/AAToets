@@ -13,12 +13,6 @@ public class ToetsClass {
 
     public ToetsClass() {
         getLijsten();
-//        System.out.println(mogelijkeVragen);
-//        for (String[] s : mogelijkeVragenOpAntwoord) {
-//            if (mogelijkeVragen.contains(s[0])) {
-//                mogelijkeToetsVragen.add(new String[] {s[0], s[1]});
-//            }
-//        }
         for (String[] mvoa : mogelijkeVragenOpAntwoord) {
             for (String[] mv : mogelijkeVragen) {
                 if (mvoa[0].equals(mv[0])) {
@@ -71,11 +65,6 @@ public class ToetsClass {
             toets.add(genereerVraag());
         }
 
-        for (String[] s : toets) {
-            for (String ss : s) {
-                System.out.println(ss);
-            }
-        }
         return toets;
     }
 
@@ -101,7 +90,8 @@ public class ToetsClass {
                 Aminozuur aztemp = AminozurenHandler.getRandAminozuurByAttribute(vraagEnAntwoordSoort[2], vraagFormat, true);
                 antwoordMogelijkheden.add(AminozurenHandler.getAminoAttribute(aztemp, vraagEnAntwoordSoort[1]));
             }
-        } else {
+        } else if (new ArrayList<String>(Arrays.asList(
+                    "Hydrofobiciteit", "Lading", "Grootte", "3D Voorkeur")).contains(vraagEnAntwoordSoort[1])) {
 //                Aminozuur aztemp = AminozurenHandler.getRandAminozuurByAttribute(vraagEnAntwoordSoort[2], vraagFormat, false);
 //                antwoordMogelijkheden.add(AminozurenHandler.getAminoAttribute(aztemp, vraagEnAntwoordSoort[1]));
             switch (vraagEnAntwoordSoort[1]) {
@@ -127,6 +117,11 @@ public class ToetsClass {
                     antwoordMogelijkheden.add("Geen");
                     break;
             }
+        } else {
+            for (int i = 0; i < 2; i++) {
+                Aminozuur aztemp = AminozurenHandler.getRandAminozuurByAttribute(vraagEnAntwoordSoort[2], vraagFormat, false);
+                antwoordMogelijkheden.add(AminozurenHandler.getAminoAttribute(aztemp, vraagEnAntwoordSoort[1]));
+            }
         }
 
         antwoord = AminozurenHandler.getAminoAttribute(az, vraagEnAntwoordSoort[1]);
@@ -138,7 +133,6 @@ public class ToetsClass {
                 returnVraagEnAntwoorden.add(s);
             }
         }
-        System.out.println(returnVraagEnAntwoorden);
 
         String[] stringList = new String[returnVraagEnAntwoorden.size()];
         stringList = returnVraagEnAntwoorden.toArray(stringList);
