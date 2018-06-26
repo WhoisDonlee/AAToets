@@ -34,12 +34,11 @@
                     <Button minWidth="0.0" mnemonicParsing="false" onAction="#afsluiten" prefHeight="70.0" text="Afsluiten" />
                 </buttons>
             </ButtonBar>
-            <Label text="WELKOM MI AMIGO DI MARTIN." GridPane.rowIndex="2">
+            <Label text="Welkom bij de aminozuren toets generator." GridPane.rowIndex="2">
                 <font>
-                    <Font size="28.0" />
+                    <Font size="20.0" />
                 </font>
             </Label>
-            <Label text="si" GridPane.rowIndex="4" />
         </GridPane>
         <columnConstraints>
             <ColumnConstraints />
