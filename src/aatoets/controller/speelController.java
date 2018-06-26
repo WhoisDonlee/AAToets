@@ -4,8 +4,10 @@ import aatoets.data.OptieClass;
 import aatoets.data.ToetsClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.lang.management.OperatingSystemMXBean;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -15,27 +17,45 @@ import java.util.TimerTask;
 public class speelController extends Controller implements Initializable {
     public Label naamLabel;
     public Label tijdLabel;
+    public Label vraagLabel;
+    public Button volgendeVraagButton;
 
     private int timerSeconds = OptieClass.getAantalSeconden();
     private ToetsClass tc;
     private ArrayList<String[]> toets;
+    private int currentVraag = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         naamLabel.setText(OptieClass.getNaam());
         tc = new ToetsClass();
         toets = tc.genereerToets();
-        for (String[] s : toets) {
-            for (String ss : s) {
-                System.out.println(ss);
-            }
-        }
         tijdLabel.setText(String.valueOf(timerSeconds));
         timer();
+        setVraagLabels(0);
+    }
+
+    private void setVraagLabels(int vraagNummer) {
+        vraagLabel.setText(getVraag(vraagNummer)[0]);
+        for (int i = 1; i < getVraag(vraagNummer).length; i++) {
+            System.out.println(getVraag(vraagNummer)[i]);
+        }
+    }
+
+    private String[] getVraag(int vraagNummer) {
+        return toets.get(vraagNummer);
     }
 
     public void volgendeVraag(ActionEvent actionEvent) {
-        tijdLabel.setText(String.valueOf(timerSeconds));
+        if (currentVraag < OptieClass.getAantalVragen()) {
+            setVraagLabels(currentVraag++);
+            if(currentVraag == OptieClass.getAantalVragen()) {
+                volgendeVraagButton.setText("Resultaten");
+            }
+        } else {
+            System.out.println(currentVraag);
+        }
+//        tijdLabel.setText(String.valueOf(timerSeconds));
     }
 
     private void timer() {
@@ -49,12 +69,15 @@ public class speelController extends Controller implements Initializable {
                         tijdLabel.setText(String.valueOf(timerSeconds));
                     }
                 });
+                timerSeconds--;
                 if(timerSeconds == 0) {
                     timer.cancel();
                 }
-                timerSeconds--;
             }
         };
         timer.scheduleAtFixedRate(task, 1000,1000);
+    }
+
+    public void start(ActionEvent actionEvent) {
     }
 }
