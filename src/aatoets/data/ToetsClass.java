@@ -65,33 +65,42 @@ public class ToetsClass {
     }
 
 
-    public String[] genereerVraag() {
+    public ArrayList<String> genereerVraag() {
 
+        ArrayList<String> returnVraagEnAntwoorden = new ArrayList<>();
         Object[] soortVragenIDLists = getUsedIDs(OptieClass.getSoortVragen());
         Object[] soortAntwoordenIDList = getUsedIDs(OptieClass.getSoortAntwoorden());
 
         ArrayList<String> soortVragenIDList = (ArrayList<String>) soortVragenIDLists[0];
-        System.out.println(soortVragenIDLists[0]);
-        System.out.println(soortVragenIDLists[1]);
 
         int randomVraag = new Random().nextInt(mogelijkeToetsVragen.size());
         Aminozuur az = AminozurenHandler.getRandomAminozuur();
         String[] vraagEnAntwoordSoort = mogelijkeToetsVragen.get(randomVraag);
         String vraag = vraagEnAntwoordSoort[0];
-        String antwoord = AminozurenHandler.getAminoAttribute(az, vraagEnAntwoordSoort[1]);
         String vraagFormat = AminozurenHandler.getAminoAttribute(az, vraagEnAntwoordSoort[2]);
+        String antwoord = null;
+        ArrayList<String> antwoordMogelijkheden = new ArrayList<>();
 
-        System.out.println(soortVragenIDList);
-        for (String s : (ArrayList<String>) soortVragenIDLists[0]) {
-            System.out.println(s);
+        if (vraag.contains("niet")) {
+            az = AminozurenHandler.getRandAminozuurByAttribute(vraagEnAntwoordSoort[2], vraagFormat, false);
+            for (int i = 0; i < 2; i++) {
+                Aminozuur aztemp = AminozurenHandler.getRandAminozuurByAttribute(vraagEnAntwoordSoort[2], vraagFormat, true);
+                antwoordMogelijkheden.add(AminozurenHandler.getAminoAttribute(aztemp, vraagEnAntwoordSoort[1]));
+            }
+        } else {
+            for (int i = 0; i < 2; i++) {
+                Aminozuur aztemp = AminozurenHandler.getRandAminozuurByAttribute(vraagEnAntwoordSoort[2], vraagFormat, false);
+                antwoordMogelijkheden.add(AminozurenHandler.getAminoAttribute(aztemp, vraagEnAntwoordSoort[1]));
+            }
         }
 
-        System.out.println(vraag + " + " + antwoord);
-        System.out.println(String.format(vraag, vraagFormat) + " = " + antwoord);
+        antwoord = AminozurenHandler.getAminoAttribute(az, vraagEnAntwoordSoort[1]);
 
-//        for (String[] s : mogelijkeToetsVragen) {
-//            System.out.println(s[0] + " : " + s[1]);
-//        }
-        return new String[] {vraag, antwoord};
+        returnVraagEnAntwoorden.add(String.format(vraag, vraagFormat));
+        returnVraagEnAntwoorden.add(antwoord);
+        returnVraagEnAntwoorden.addAll(antwoordMogelijkheden);
+        System.out.println(returnVraagEnAntwoorden);
+
+        return returnVraagEnAntwoorden;
     }
 }

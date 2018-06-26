@@ -79,40 +79,40 @@ public class AminozurenHandler {
         return attribuut;
     }
 
-    public static Aminozuur getRandAminozuurByAttribute(String att, String val, boolean niet) {
+    public static Aminozuur getRandAminozuurByAttribute(String att, String value, boolean gelijkAanValue) {
         Aminozuur aa = null;
-        String attWaarde = val;
+        String attWaarde = null;
 
-        if(niet) {
-            while(!attWaarde.equals(val)) {
+        if(gelijkAanValue) {
+            do {
                 aa = getRandomAminozuur();
                 switch (att) {
-                    case "hydro":
+                    case "Hydrofobiciteit":
                         attWaarde = aa.getHydrofobiciteit();
                         break;
-                    case "lading":
+                    case "Lading":
                         attWaarde = aa.getLading();
                         break;
-                    case "grootte":
+                    case "Grootte":
                         attWaarde = aa.getGrootte();
                         break;
                 }
-            }
+            } while (!value.equals(attWaarde));
         } else {
-            while(attWaarde.equals(val)) {
+            do {
                 aa = getRandomAminozuur();
                 switch (att) {
-                    case "hydro":
+                    case "Hydrofobiciteit":
                         attWaarde = aa.getHydrofobiciteit();
                         break;
-                    case "lading":
+                    case "Lading":
                         attWaarde = aa.getLading();
                         break;
-                    case "grootte":
+                    case "Grootte":
                         attWaarde = aa.getGrootte();
                         break;
                 }
-            }
+            } while (value.equals(attWaarde));
         }
         return aa;
     }
