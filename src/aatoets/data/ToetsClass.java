@@ -64,8 +64,22 @@ public class ToetsClass {
         return new Object[] {usedIDList, usedNonIDList};
     }
 
+    public ArrayList<String[]> genereerToets() {
+        ArrayList<String[]> toets = new ArrayList<>();
 
-    public ArrayList<String> genereerVraag() {
+        for (int i = 0; i < OptieClass.getAantalVragen(); i++) {
+            toets.add(genereerVraag());
+        }
+
+        for (String[] s : toets) {
+            for (String ss : s) {
+                System.out.println(ss);
+            }
+        }
+        return toets;
+    }
+
+    public String[] genereerVraag() {
 
         ArrayList<String> returnVraagEnAntwoorden = new ArrayList<>();
         Object[] soortVragenIDLists = getUsedIDs(OptieClass.getSoortVragen());
@@ -88,9 +102,30 @@ public class ToetsClass {
                 antwoordMogelijkheden.add(AminozurenHandler.getAminoAttribute(aztemp, vraagEnAntwoordSoort[1]));
             }
         } else {
-            for (int i = 0; i < 2; i++) {
-                Aminozuur aztemp = AminozurenHandler.getRandAminozuurByAttribute(vraagEnAntwoordSoort[2], vraagFormat, false);
-                antwoordMogelijkheden.add(AminozurenHandler.getAminoAttribute(aztemp, vraagEnAntwoordSoort[1]));
+//                Aminozuur aztemp = AminozurenHandler.getRandAminozuurByAttribute(vraagEnAntwoordSoort[2], vraagFormat, false);
+//                antwoordMogelijkheden.add(AminozurenHandler.getAminoAttribute(aztemp, vraagEnAntwoordSoort[1]));
+            switch (vraagEnAntwoordSoort[1]) {
+                case "Hydrofobiciteit":
+                    antwoordMogelijkheden.add("Moderate");
+                    antwoordMogelijkheden.add("Hydrofiel");
+                    antwoordMogelijkheden.add("Hydrofoob");
+                    break;
+                case "Lading":
+                    antwoordMogelijkheden.add("neutraal");
+                    antwoordMogelijkheden.add("positief");
+                    antwoordMogelijkheden.add("negatief");
+                    break;
+                case "Grootte":
+                    antwoordMogelijkheden.add("Klein");
+                    antwoordMogelijkheden.add("Middel");
+                    antwoordMogelijkheden.add("Groot");
+                    break;
+                case "3D Voorkeur":
+                    antwoordMogelijkheden.add("T");
+                    antwoordMogelijkheden.add("H");
+                    antwoordMogelijkheden.add("S");
+                    antwoordMogelijkheden.add("Geen");
+                    break;
             }
         }
 
@@ -98,9 +133,15 @@ public class ToetsClass {
 
         returnVraagEnAntwoorden.add(String.format(vraag, vraagFormat));
         returnVraagEnAntwoorden.add(antwoord);
-        returnVraagEnAntwoorden.addAll(antwoordMogelijkheden);
+        for (String s : antwoordMogelijkheden) {
+            if(!returnVraagEnAntwoorden.contains(s)) {
+                returnVraagEnAntwoorden.add(s);
+            }
+        }
         System.out.println(returnVraagEnAntwoorden);
 
-        return returnVraagEnAntwoorden;
+        String[] stringList = new String[returnVraagEnAntwoorden.size()];
+        stringList = returnVraagEnAntwoorden.toArray(stringList);
+        return stringList;
     }
 }

@@ -56,8 +56,8 @@ class Vragen {
             "Wat is de grootte van aminozuur met de volgende zijketen:"
     ));
     private static ArrayList<String> voorkeur3DVragen = new ArrayList<>(Arrays.asList(
-            "Welk aminozuur heeft een voorkeur voor <helix/turn/sheet>?",
-            "Welk aminozuur heeft geen voorkeur voor een <helix/turn/sheet>?",
+            "Welk aminozuur heeft een voorkeur voor %s?",
+            "Welk aminozuur heeft geen voorkeur voor een %s?",
             "Wat is de 3D voorkeur van aminozuur %s?",
             "Wat is de 3D voorkeur van aminozuur %s?",
             "Wat is de 3D voorkeur van aminozuur %s?",
@@ -76,8 +76,8 @@ class Vragen {
             "Wat is de volledigenaam van aminozuur %s?",
             "Welk aminozuur is %s?",
             "Welk aminozuur is niet %s?",
-            "Welk aminozuur heeft een voorkeur voor <helix/turn/sheet>?",
-            "Welk aminozuur heeft geen voorkeur voor een <helix/turn/sheet>?",
+            "Welk aminozuur heeft een voorkeur voor %s?",
+            "Welk aminozuur heeft geen voorkeur voor een %s?",
             "Wat is de volledigenaam van het volgende aminozuur met zijketen:"
     ));
 
@@ -86,8 +86,8 @@ class Vragen {
             "Wat is de 1-lettercode van aminozuur %s?",
             "Welk aminozuur is %s?",
             "Welk aminozuur is niet %s?",
-            "Welk aminozuur heeft een voorkeur voor <helix/turn/sheet>?",
-            "Welk aminozuur heeft geen voorkeur voor een <helix/turn/sheet>?",
+            "Welk aminozuur heeft een voorkeur voor %s?",
+            "Welk aminozuur heeft geen voorkeur voor een %s?",
             "Wat is de 1-lettercode van het volgende aminozuur met zijketen:"
     ));
 
@@ -96,8 +96,8 @@ class Vragen {
             "Wat is de 3-lettercode van aminozuur %s?",
             "Welk aminozuur is %s?",
             "Welk aminozuur is niet %s?",
-            "Welk aminozuur heeft een voorkeur voor <helix/turn/sheet>?",
-            "Welk aminozuur heeft geen voorkeur voor een <helix/turn/sheet>?",
+            "Welk aminozuur heeft een voorkeur voor %s?",
+            "Welk aminozuur heeft geen voorkeur voor een %s?",
             "Wat is de 3-lettercode van het volgende aminozuur met zijketen:"
     ));
 
