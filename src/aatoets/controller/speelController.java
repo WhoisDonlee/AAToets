@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 
 public class speelController extends Controller implements Initializable {
     public Label naamLabel;
-    public ToetsClass tc;
+    private ToetsClass tc;
     private ArrayList<String[]> toets;
 
     @Override

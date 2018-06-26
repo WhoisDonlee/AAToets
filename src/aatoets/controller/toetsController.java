@@ -1,35 +1,53 @@
 package aatoets.controller;
 
 
+import aatoets.data.OptieClass;
+import aatoets.data.ToetsClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Scanner;
+import java.util.*;
 
-public class toetsController extends Controller {
+public class toetsController extends Controller implements Initializable {
     private ArrayList<String> allewoorden = new ArrayList<>();
     public javafx.scene.control.TextArea textfieldtoets;
     public Label label;
     @FXML
     ToggleGroup aantal;
+    private ToetsClass tc;
+    private ArrayList<String[]> toets;
 
     public void loadBeginScene(ActionEvent actionEvent) throws IOException {
         screenManager.loadStage(rootPane, "/aatoets/view/startScene.fxml");
     }
 
-    public void genereerToets(ActionEvent actionEvent) throws IOException {
-        RadioButton selectedRadionbutton = (RadioButton) aantal.getSelectedToggle();
-        String toggleGroupValue = selectedRadionbutton.getText();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ArrayList<String> soortVragen = new ArrayList<>(Arrays.asList("Volledige Naam", "1 lettercode",
+                             "3 lettercode", "Hydrofobiciteit",
+                             "Lading", "Grootte",
+                             "3D Voorkeur"));
+        OptieClass.setSoortVragen(soortVragen);
+        OptieClass.setSoortAntwoorden(soortVragen);
+    }
 
+    public void genereerToets(ActionEvent actionEvent) throws IOException {
+
+        OptieClass.setAantalVragen(getAantalVragen());
+
+        tc = new ToetsClass();
+        toets = tc.genereerToets();
         // Dennis toggleGroupValue is het aantal vragen dat er gemaakt moeten worden.
         // Bij maaktestfiles en maakantfiles worden de test en antwoorden files gemaakt
         // Deze moeten nog gevuld worden met vragen.
@@ -40,14 +58,33 @@ public class toetsController extends Controller {
 
     }
 
+    private int getAantalVragen() {
+        RadioButton rb = (RadioButton) aantal.getSelectedToggle();
+        return Integer.parseInt(rb.getText());
+    }
+
     private void maaktestfiles() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         for (String naam : allewoorden) { // is hetzelfde als (int i = 0; i < allewoorden.size(); i++)
             String fileName = "AA_toets_" + naam + "_" + timeStamp + ".txt";
-            if (new File(fileName).createNewFile()) {
+            File file = new File(fileName);
+            if (file.createNewFile()) {
                 // file created successfully
-            } else {
-                // error, do something appropriate
+                FileWriter writer = new FileWriter(file);
+                for (String[] s : toets) {
+                    for (int i = 0; i < s.length; i++) {
+                        if (i == 0) {
+                            writer.write(s[i]);
+                            System.out.println(s[i]);
+                        } else {
+                            writer.write("[ ] " + s[i]);
+                            System.out.println("[ ] " + s[i]);
+                        }
+                        writer.write("\n");
+                    }
+                    writer.write("\n");
+                }
+                writer.close();
             }
         }
     }
@@ -56,10 +93,13 @@ public class toetsController extends Controller {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         for (String naam : allewoorden) { // is hetzelfde als (int i = 0; i < allewoorden.size(); i++)
             String fileName = "AA_ant_" + naam + "_" + timeStamp + ".txt";
-            if (new File(fileName).createNewFile()) {
-                // file created successfully
-            } else {
-                // error, do something appropriate
+            File file = new File(fileName);
+            if (file.createNewFile()) {
+                FileWriter writer = new FileWriter(file);
+                for (String[] s : toets) {
+                    writer.write(s[0] + "\n" + s[1] + "\n\n");
+                }
+                writer.close();
             }
         }
     }
@@ -131,7 +171,6 @@ public class toetsController extends Controller {
     public void afsluiten(ActionEvent actionEvent) {
         System.exit(0);
     }
-
 
 }
 

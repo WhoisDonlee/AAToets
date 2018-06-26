@@ -11,7 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("view/optieScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/startScene.fxml"));
         primaryStage.setTitle("AA Toets");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
