@@ -36,7 +36,7 @@
             </buttons>
         </ButtonBar>
       <Label fx:id="naamLabel" text="" />
-      <Label text="Tijd" GridPane.columnIndex="1" />
+      <Label fx:id="tijdLabel" text="Tijd" GridPane.columnIndex="1" />
       <Label text="Dit is de vraag" GridPane.rowIndex="1" />
         <VBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
             <RadioButton mnemonicParsing="false" text="Antwoord 1">
