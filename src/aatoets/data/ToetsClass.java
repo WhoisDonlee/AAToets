@@ -1,31 +1,44 @@
 package aatoets.data;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 public class ToetsClass {
     public static ArrayList<String[]> toetsList;
-    private final ArrayList<String> mogelijkeVragen = new ArrayList<>();
+    private final ArrayList<String[]> mogelijkeVragen = new ArrayList<>();
     private final ArrayList<String[]> mogelijkeVragenOpAntwoord = new ArrayList<>();
     private final ArrayList<String[]> mogelijkeToetsVragen = new ArrayList<>();
     private final ArrayList<String> toetsVragen = new ArrayList<>();
 
     public ToetsClass() {
         getLijsten();
-        System.out.println(mogelijkeVragen);
-        for (String[] s : mogelijkeVragenOpAntwoord) {
-            if (mogelijkeVragen.contains(s[0])) {
-                mogelijkeToetsVragen.add(new String[] {s[0], s[1]});
+//        System.out.println(mogelijkeVragen);
+//        for (String[] s : mogelijkeVragenOpAntwoord) {
+//            if (mogelijkeVragen.contains(s[0])) {
+//                mogelijkeToetsVragen.add(new String[] {s[0], s[1]});
+//            }
+//        }
+        for (String[] mvoa : mogelijkeVragenOpAntwoord) {
+            for (String[] mv : mogelijkeVragen) {
+                if (mvoa[0].equals(mv[0])) {
+                    if (!mvoa[1].equals(mv[1])) {
+                        mogelijkeToetsVragen.add(new String[] {mvoa[0], mvoa[1], mv[1]});
+                    }
+                }
             }
         }
 //        genereerToetsVragen();
     }
 
     private void getLijsten() {
+//        for (String s : OptieClass.getSoortVragen()) {
+//            mogelijkeVragen.addAll(Vragen.returnListByName(s, "vraag"));
+//        }
         for (String s : OptieClass.getSoortVragen()) {
-            mogelijkeVragen.addAll(Vragen.returnListByName(s, "vraag"));
+            for (String i : Vragen.returnListByName(s, "vraag")) {
+                mogelijkeVragen.add(new String[] {i, s});
+            }
         }
         for (String s : OptieClass.getSoortAntwoorden()) {
             for (String i : Vragen.returnListByName(s, "alsAntwoord")) {
@@ -66,7 +79,7 @@ public class ToetsClass {
         String[] vraagEnAntwoordSoort = mogelijkeToetsVragen.get(randomVraag);
         String vraag = vraagEnAntwoordSoort[0];
         String antwoord = AminozurenHandler.getAminoAttribute(az, vraagEnAntwoordSoort[1]);
-        String vraagFormat = null;
+        String vraagFormat = AminozurenHandler.getAminoAttribute(az, vraagEnAntwoordSoort[2]);
 
         System.out.println(soortVragenIDList);
         for (String s : (ArrayList<String>) soortVragenIDLists[0]) {
@@ -74,6 +87,7 @@ public class ToetsClass {
         }
 
         System.out.println(vraag + " + " + antwoord);
+        System.out.println(String.format(vraag, vraagFormat) + " = " + antwoord);
 
 //        for (String[] s : mogelijkeToetsVragen) {
 //            System.out.println(s[0] + " : " + s[1]);

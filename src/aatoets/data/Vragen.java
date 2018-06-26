@@ -11,7 +11,7 @@ class Vragen {
             "Wat is de lading van aminozuur %s?",
             "Wat is de grootte van aminozuur %s?",
             "Wat is de 3D voorkeur van aminozuur %s?",
-            "Wat is de zijketen van aminozuur %s"
+            "Wat is de zijketen van aminozuur %s?"
     ));
     private static ArrayList<String> code1Vragen = new ArrayList<>(Arrays.asList(
             "Wat is de volledigenaam van aminozuur %s?",
