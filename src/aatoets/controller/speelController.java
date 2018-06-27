@@ -11,6 +11,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
+import java.io.IOException;
 import java.lang.management.OperatingSystemMXBean;
 import java.net.URL;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class speelController extends Controller implements Initializable {
     private int timerSeconds = OptieClass.getAantalSeconden();
     private ToetsClass tc;
     private ArrayList<String[]> toets;
+    private ArrayList<String[]> goedEnGegevenAntwoord = new ArrayList<>();
     private int currentVraag = 0;
 
     @Override
@@ -41,11 +43,25 @@ public class speelController extends Controller implements Initializable {
         setVraagLabels(0);
     }
 
+    private void slaGegevenAntwoordOp(int vraagNummer) {
+        String goedeAntwoord = getVraag(vraagNummer)[1];
+        String gegevenAntwoord = getGegevenAntwoord();
+        goedEnGegevenAntwoord.add(new String[] {String.valueOf(vraagNummer), goedeAntwoord, gegevenAntwoord});
+    }
+
+    private String getGegevenAntwoord() {
+        RadioButton rb = (RadioButton) antwoordenToggleGroup.getSelectedToggle();
+        return rb.getText();
+    }
+
     private void setVraagLabels(int vraagNummer) {
         vraagLabel.setText(getVraag(vraagNummer)[0]);
         antwoordGridPane.getChildren().clear();
         for (int i = 1; i < getVraag(vraagNummer).length; i++) {
             RadioButton rb = new RadioButton(getVraag(vraagNummer)[i]);
+            if (i==1) {
+                rb.setSelected(true);
+            }
             antwoordGridPane.add(rb, 0, i-1);
             rb.setUserData("RB1");
             rb.setToggleGroup(antwoordenToggleGroup);
@@ -57,14 +73,16 @@ public class speelController extends Controller implements Initializable {
         return toets.get(vraagNummer);
     }
 
-    public void volgendeVraag(ActionEvent actionEvent) {
+    public void volgendeVraag(ActionEvent actionEvent) throws IOException {
         if (currentVraag < OptieClass.getAantalVragen()) {
+            slaGegevenAntwoordOp(currentVraag);
             setVraagLabels(currentVraag++);
             if(currentVraag == OptieClass.getAantalVragen()) {
                 volgendeVraagButton.setText("Resultaten");
             }
         } else {
             System.out.println(currentVraag);
+            screenManager.loadStage(rootPane, "/aatoets/view/resultaatScene.fxml");
         }
 //        tijdLabel.setText(String.valueOf(timerSeconds));
     }
