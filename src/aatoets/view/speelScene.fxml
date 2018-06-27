@@ -32,20 +32,34 @@
             <buttons>
                 <Button mnemonicParsing="false" onAction="#start" prefHeight="70.0" text="Start" />
                 <Button fx:id="volgendeVraagButton" mnemonicParsing="false" onAction="#volgendeVraag" prefHeight="70.0" prefWidth="314.0" text="Volgende vraag" />
-                <Button minWidth="0.0" mnemonicParsing="false"  prefHeight="70.0" text="Stop" />
+                <Button minWidth="0.0" mnemonicParsing="false" prefHeight="70.0" text="Stop" />
             </buttons>
         </ButtonBar>
       <Label fx:id="naamLabel" text="" />
       <Label fx:id="tijdLabel" text="Tijd" GridPane.columnIndex="1" />
       <Label fx:id="vraagLabel" text="Dit is de vraag" GridPane.rowIndex="1" />
-        <VBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
-            <RadioButton mnemonicParsing="false" text="Antwoord 1">
-            <toggleGroup>
-               <ToggleGroup fx:id="antwoorden" />
-            </toggleGroup></RadioButton>
-            <RadioButton mnemonicParsing="false" text="Antwoord 2" toggleGroup="$antwoorden" />
-            <RadioButton mnemonicParsing="false" text="Antwoord 3" toggleGroup="$antwoorden" />
-            <RadioButton mnemonicParsing="false" text="Antwoord 4" toggleGroup="$antwoorden" />
+        <VBox fx:id="antwoordenVbox" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <GridPane fx:id="antwoordGridPane">
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+                  <RadioButton mnemonicParsing="false" text="Antwoord 3" GridPane.rowIndex="2">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="antwoordenToggleGroup" />
+                  </toggleGroup>
+               </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Antwoord 1" toggleGroup="$antwoordenToggleGroup" />
+                  <RadioButton mnemonicParsing="false" text="Antwoord 2" toggleGroup="$antwoordenToggleGroup" GridPane.rowIndex="1" />
+                  <RadioButton mnemonicParsing="false" text="Antwoord 4" toggleGroup="$antwoordenToggleGroup" GridPane.rowIndex="3" />
+            </children>
+         </GridPane>
         </VBox>
     </GridPane>
     <columnConstraints>

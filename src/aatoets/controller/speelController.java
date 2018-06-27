@@ -6,6 +6,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 import java.lang.management.OperatingSystemMXBean;
 import java.net.URL;
@@ -19,6 +23,8 @@ public class speelController extends Controller implements Initializable {
     public Label tijdLabel;
     public Label vraagLabel;
     public Button volgendeVraagButton;
+    public ToggleGroup antwoordenToggleGroup;
+    public GridPane antwoordGridPane;
 
     private int timerSeconds = OptieClass.getAantalSeconden();
     private ToetsClass tc;
@@ -37,7 +43,12 @@ public class speelController extends Controller implements Initializable {
 
     private void setVraagLabels(int vraagNummer) {
         vraagLabel.setText(getVraag(vraagNummer)[0]);
+        antwoordGridPane.getChildren().clear();
         for (int i = 1; i < getVraag(vraagNummer).length; i++) {
+            RadioButton rb = new RadioButton(getVraag(vraagNummer)[i]);
+            antwoordGridPane.add(rb, 0, i-1);
+            rb.setUserData("RB1");
+            rb.setToggleGroup(antwoordenToggleGroup);
             System.out.println(getVraag(vraagNummer)[i]);
         }
     }
